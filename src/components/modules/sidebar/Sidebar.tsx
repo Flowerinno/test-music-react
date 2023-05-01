@@ -2,34 +2,36 @@ import React from "react";
 import { Container, Image, Row, Col, Nav } from "react-bootstrap";
 import { NAV_LINKS } from "../../../util/constants";
 import { Link } from "react-router-dom";
-import "./Sidebar.css";
+import "./Sidebar.scss";
 
-interface SidebarProps {}
+interface SidebarProps {
+	children: React.ReactNode;
+}
 
-const Sidebar: React.FC<SidebarProps> = ({ children }: any) => {
+const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 	return (
-		<Container className="container">
-			<Nav
-				className="sidebar"
-				activeKey="/home"
-				onSelect={(selectedKey) => console.log(selectedKey)}
-			>
-				{NAV_LINKS.map((link) => {
-					return (
-						<Nav.Item key={link.name} className="sidebar_item">
-							<Image src={link.icon} width="20px" />
-							<Link className="sidebar_link" to={`/${link.name}`}>
-								{link.name}
-							</Link>
-						</Nav.Item>
-					);
-				})}
-			</Nav>
-
-			<Col className="children" md={4}>
-				{children}
+		<Row>
+			<Col className="sidebar_wrapper">
+				<Nav
+					className="sidebar"
+					activeKey="/home"
+					onSelect={(selectedKey) => console.log(selectedKey)}
+				>
+					{NAV_LINKS.map((link) => {
+						return (
+							<Nav.Item key={link.name} className="sidebar_item">
+								<Image src={link.icon} className="links_icon" width="20px" />
+								<Link className="sidebar_link" to={`/${link.name}`}>
+									{link.name}
+								</Link>
+							</Nav.Item>
+						);
+					})}
+				</Nav>
 			</Col>
-		</Container>
+
+			<Col className="children">{children}</Col>
+		</Row>
 	);
 };
 

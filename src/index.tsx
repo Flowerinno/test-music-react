@@ -4,9 +4,11 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { BrowserRouter } from "react-router-dom";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import App from "./App";
 
-import "./index.css";
+import "./index.scss";
 
 import keycloak from "./util/keycloack";
 import { ReactKeycloakProvider } from "@react-keycloak/web";

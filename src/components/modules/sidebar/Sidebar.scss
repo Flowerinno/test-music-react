@@ -1,15 +1,28 @@
+@import "../../../styles/theme";
+
 .container {
+}
+.row {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row;
 	height: 100vh;
 	width: 100vw;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.sidebar_wrapper {
+	height: 100vh;
+	flex: 0.25;
+	padding: 0;
 }
 
 .sidebar {
-	flex: 0.15;
-	background-color: #fad8d6;
+	height: 100%;
+	width: 100%;
+	background-color: $secondary-color;
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: column;
 	justify-content: center;
 	align-items: center;
 	gap: 2.5em;
@@ -20,7 +33,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 2em;
+	gap: 0.5em;
 	padding: 0.2em;
 	cursor: pointer;
 }
@@ -37,21 +50,36 @@
 	letter-spacing: 0.1em;
 }
 
+.links_icon {
+	width: 1em;
+}
+
 .children {
 	flex: 0.85;
-	background-color: #edb88b;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	background-color: $primary-color;
 }
 
 @media screen and (max-width: 500px) {
-	.container {
+	.row {
 		flex-flow: column;
 	}
-
 	.sidebar {
-		flex: 0.5;
+		height: 100%;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1px;
 	}
 
 	.children {
-		flex: 0.95;
+		flex: 1;
+		height: 100%;
+	}
+
+	.links_icon {
+		width: 0.5em;
 	}
 }

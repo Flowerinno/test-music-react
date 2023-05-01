@@ -21,3 +21,8 @@ export const NAV_LINKS = [
 		icon: PlaylistsIcon,
 	},
 ];
+
+export const API_URL =
+	"https://shazam.p.rapidapi.com/songs/list-recommendations?key=484129036&locale=en-US";
+
+export const API_KEY = "03e7abe714msh6ae8f21d00787e9p1960eejsnc01bd4807a46";

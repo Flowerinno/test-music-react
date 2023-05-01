@@ -1,0 +1,25 @@
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+);
+
+// Define colors
+$primary-color: #7a7d80;
+$secondary-color: #838e97;
+$success-color: #28a745;
+$warning-color: #ffc107;
+$danger-color: #dc3545;
+$info-color: #17a2b8;
+
+// Set colors for different elements
+$theme-colors: (
+	primary: $primary-color,
+	secondary: $secondary-color,
+	success: $success-color,
+	warning: $warning-color,
+	danger: $danger-color,
+	info: $info-color,
+);

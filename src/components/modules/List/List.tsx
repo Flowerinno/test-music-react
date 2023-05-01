@@ -1,32 +1,36 @@
-import React from "react";
-import { Container, Row, Col, ListGroup } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 
-const itemList = [
-	{ id: 1, name: "Item 1" },
-	{ id: 2, name: "Item 2" },
-	{ id: 3, name: "Item 3" },
-	{ id: 4, name: "Item 4" },
-	{ id: 5, name: "Item 5" },
-	{ id: 6, name: "Item 6" },
-	{ id: 7, name: "Item 7" },
-	{ id: 8, name: "Item 8" },
-	{ id: 9, name: "Item 9" },
-	{ id: 10, name: "Item 10" },
-];
+import { SongType } from "../../../store/features/music/musicSlice";
 
-const HorizontalList = () => {
+import "./List.scss";
+interface HorizontalListProps {
+	heading?: string;
+	songs?: SongType[];
+}
+
+const HorizontalList: React.FC<HorizontalListProps> = ({ heading, songs }) => {
+	
 	return (
-		<Container fluid>
-			<Row>
-				<Col>
-					<ListGroup horizontal className="overflow-auto flex-nowrap">
-						{itemList.map((item) => (
-							<ListGroup.Item key={item.id}>{item.name}</ListGroup.Item>
-						))}
-					</ListGroup>
-				</Col>
-			</Row>
-		</Container>
+		<div className="container">
+			{heading && (
+				<div className="heading">
+					<p>{heading}</p>
+					<span>🔥</span>
+				</div>
+			)}
+			<ListGroup horizontal className="horizontal_list">
+				{songs?.map((song, index) => (
+					<div className="horizontal_list_song" key={index}>
+						<ListGroup.Item
+							className="hl_item"
+							variant="dark"
+							style={{ backgroundImage: `url(${song.images?.background})` }}
+						></ListGroup.Item>
+						<span className="song_title">{song.title}</span>
+					</div>
+				))}
+			</ListGroup>
+		</div>
 	);
 };
 
