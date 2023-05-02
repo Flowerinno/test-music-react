@@ -7,7 +7,10 @@
 	justify-content: flex-start;
 	overflow-y: scroll;
 	height: 100%;
+	width: 100%;
 	position: relative;
+	padding: 0;
+	margin: 0;
 
 	& > input {
 		top: 15px;
@@ -36,27 +39,29 @@
 	}
 
 	.search_list {
-		width: 90%;
-		height: max-content;
+		padding: 1em;
+		margin: 0;
+		width: 100%;
 		display: flex;
 		flex-flow: row wrap;
-		align-items: flex-start;
-		justify-content: flex-start;
-
+		justify-content: center;
 		gap: 1em;
 
 		.search_item {
 			padding: 0;
 			width: 30%;
+			height: 10em;
 			display: flex;
 			flex-flow: row;
 			justify-content: flex-start;
 			background-color: $secondary-color;
+			border-radius: 10px;
 
 			.search_img {
 				width: 50%;
 				height: 100%;
 				object-fit: cover;
+				border-radius: 10px;
 			}
 
 			.search_description {
@@ -67,13 +72,31 @@
 				align-items: center;
 
 				& > p {
+					margin: 0;
+					padding: 0;
 					font-weight: 400;
 					font-size: 14px;
+					text-align: center;
 				}
 
 				& > span {
+					text-align: center;
 					font-weight: 700;
 					font-size: 16px;
+				}
+			}
+
+			@media screen and (max-width: 850px) {
+				width: 100%;
+
+				.search_description {
+					& > p {
+						font-size: 10px;
+					}
+
+					& > span {
+						font-size: 12px;
+					}
 				}
 			}
 		}
