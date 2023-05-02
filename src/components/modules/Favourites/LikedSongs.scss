@@ -1,9 +1,9 @@
 @import "../../../styles/theme.scss";
 
-.playlists_container {
+.fav_container {
 	height: 100vh;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column;
 	gap: 1em;
 	align-items: center;
 	justify-content: flex-start;
@@ -20,29 +20,46 @@
 		background: #000;
 		border-radius: 10px;
 	}
+
+	.fav_wrapper {
+		width: 90%;
+		display: flex;
+		flex-flow: row wrap;
+		gap: 1em;
+	}
 }
 
-.playlists_item {
+.empty_fav {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	height: 100vh;
+	width: 100%;
+}
+
+.fav_item {
 	padding: 0;
 	display: flex;
 	flex-flow: row;
 	width: 30%;
-	height: 10em;
-	justify-content: space-evenly;
+	height: 15em;
+	justify-content: flex-start;
 	align-items: center;
 	background-color: $secondary-color;
-	border-radius: 1em;
+	border-radius: 1.2em;
 	position: relative;
 }
 
-.playlists_image {
+.fav_image {
 	width: 50%;
-	height: 10em;
+	height: 15em;
 	object-fit: cover;
-	border-radius: 1em;
+	border-radius: 0.4em;
 }
 
-.description {
+.fav_description {
 	width: 50%;
 	display: flex;
 	flex-flow: column;
@@ -51,29 +68,31 @@
 	gap: 5px;
 
 	& > p {
+		font-size: 1em;
 		text-align: center;
 	}
 }
 
-.fav {
+.remove_fav {
 	position: absolute;
 	bottom: 5px;
 	right: 5px;
 
 	&:hover {
 		cursor: pointer;
-		scale: 1.1;
+		scale: 1.2;
 	}
 }
 
 @media screen and (max-width: 1200px) {
-	.playlists_container {
+	.fav_container {
 		flex-flow: column;
 	}
-	.playlists_item {
+
+	.fav_item {
 		width: 100%;
 
-		.description {
+		.fav_description {
 			& > p {
 				font-size: 1em;
 			}

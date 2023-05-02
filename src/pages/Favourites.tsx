@@ -1,12 +1,9 @@
+import React from "react";
 
-
-
-import React from 'react'
+import LikedSongs from "../components/modules/Favourites/LikedSongs";
 
 const Favourites = () => {
-  return (
-    <div>Favourites</div>
-  )
-}
+	return <LikedSongs />;
+};
 
-export default Favourites
+export default Favourites;

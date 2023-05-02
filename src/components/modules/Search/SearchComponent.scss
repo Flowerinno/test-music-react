@@ -1,0 +1,81 @@
+@import "../../../styles/theme.scss";
+
+.search_container {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: flex-start;
+	overflow-y: scroll;
+	height: 100%;
+	position: relative;
+
+	& > input {
+		top: 15px;
+		position: sticky;
+		z-index: 6;
+		margin-top: 15px;
+		width: 90%;
+		height: 50px;
+		border: 1px solid #000;
+		border-radius: 5px;
+		padding: 0 10px;
+		margin-bottom: 10px;
+		font-size: 1.2rem;
+		background-color: #000;
+		color: #fff;
+	}
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		background: gray;
+	}
+
+	&::-webkit-scrollbar-thumb:vertical {
+		background: #000;
+		border-radius: 10px;
+	}
+
+	.search_list {
+		width: 90%;
+		height: max-content;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+		justify-content: flex-start;
+
+		gap: 1em;
+
+		.search_item {
+			padding: 0;
+			width: 30%;
+			display: flex;
+			flex-flow: row;
+			justify-content: flex-start;
+			background-color: $secondary-color;
+
+			.search_img {
+				width: 50%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.search_description {
+				width: 50%;
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				align-items: center;
+
+				& > p {
+					font-weight: 400;
+					font-size: 14px;
+				}
+
+				& > span {
+					font-weight: 700;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}

@@ -9,7 +9,6 @@ interface HorizontalListProps {
 }
 
 const HorizontalList: React.FC<HorizontalListProps> = ({ heading, songs }) => {
-	
 	return (
 		<div className="container">
 			{heading && (

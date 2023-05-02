@@ -1,11 +1,9 @@
+import React from "react";
 
+import SearchComponent from "../components/modules/Search/SearchComponent";
 
-import React from 'react'
+const Search: React.FC = () => {
+	return <SearchComponent />;
+};
 
-const Search = () => {
-  return (
-    <div>Search</div>
-  )
-}
-
-export default Search
+export default Search;

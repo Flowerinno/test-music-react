@@ -5,6 +5,8 @@ import "./Playlists.scss";
 
 import { SongType } from "../../../store/features/music/musicSlice";
 
+import { addSongToFavourites } from "../../../util/favouritesHandler";
+
 type PlaylistsProps = {
 	songs?: SongType[] | null;
 };
@@ -21,8 +23,10 @@ const MusicList: React.FC<PlaylistsProps> = ({ songs }) => {
 					/>
 					<div className="description">
 						<p>{song.title}</p>
-						<span>{song.subtitle}</span>
-						<span className="fav">🌟</span>
+						<span style={{ fontWeight: "bold" }}>{song.subtitle}</span>
+						<span className="fav" onClick={() => addSongToFavourites(song)}>
+							🌟
+						</span>
 					</div>
 				</ListGroup.Item>
 			))}
